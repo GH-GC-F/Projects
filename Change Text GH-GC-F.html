@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>HTML Change JavaScript Text</h1>
+
+<h3 id="text">But I can't change</h3>
+<button onclick="ChangeText()">I Change Things</button>
+<br><br>
+<button onclick="ChangeTextAgain()">I Unchange Things</button>
+
+<script>
+	function ChangeText() {
+		document.getElementById("text").innerText = "Even if I try";
+	}
+    function ChangeTextAgain() {
+		document.getElementById("text").innerText = "But I can't change";
+	}
+</script>
+</body>
+</html>
