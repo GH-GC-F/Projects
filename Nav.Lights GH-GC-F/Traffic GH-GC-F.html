@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+    font-family: "Courier New";
+     }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+     }
+
+h1 {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  padding-top: 50px;
+  color: #e8d15d;
+   }
+
+.traffic-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 400px;
+  width: 150px;
+  border-radius: 10px;
+  background-color: #e8d15d;
+              }
+
+.circle {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 10px auto;
+  background-color: #8c7e38;
+        }
+
+.circle.l1 {
+  background-color: red;
+  box-shadow: 0 0 3000px 30px #ff0212;
+           }
+
+.circle.l2{
+    background-color: yellow;
+    box-shadow: 0 0 3000px 30px #e59336;
+          }
+
+.circle.l3{
+    background-color: green;
+    box-shadow: 0 0 3000px 30px #36d764;
+          }
+</style>
+</head>
+<body>
+<h1>Traffic Light</h1>
+<div class="traffic-cont">
+  <div class="circle l1" color="l1"></div>
+  <div class="circle" color="l2"></div>
+  <div class="circle" color="l3"></div>
+</div>
+
+<script>
+let lights = document.querySelectorAll(".circle");
+let light = 0;
+
+setInterval(() => {
+    changeLight();
+}, 1000);
+
+function changeLight() {
+    lights[light].classList.remove(lights[light].getAttribute("color"));
+
+    light++;
+
+    if (light > 2) {
+        light = 0;
+    }
+    const selectLight = lights[light];
+    selectLight.classList.add(selectLight.getAttribute("color"));
+}
+</script>
+</body>
+</html>
